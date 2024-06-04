@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nutriapp/modules/sidebar/sidebar.dart';
-import 'package:nutriapp/modules/profile/profileSinEdicion.dart';
+
+import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
 
 class SideBarlayout extends StatelessWidget {
   const SideBarlayout({super.key});
@@ -8,11 +10,19 @@ class SideBarlayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: <Widget>[
-        ProfileWithoutPage(),
-        SideBar(),
-      ],
-    ));
+      body: BlocProvider<NavigationBloc>(
+        create: (context) => NavigationBloc(),
+        child: Stack(
+          children: <Widget>[
+            BlocBuilder<NavigationBloc, NavigationStates>(
+              builder: (context, navigationState) {
+                return navigationState as Widget;
+              },
+            ),
+            SideBar(),
+          ],
+        ),
+      ),
+    );
   }
 }
