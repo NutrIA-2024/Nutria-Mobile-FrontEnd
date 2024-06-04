@@ -1,8 +1,9 @@
 import 'dart:async';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter/material.dart';
 import 'package:nutriapp/modules/sidebar/menuItem.dart';
+import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});
@@ -76,15 +77,30 @@ class _SideBarState extends State<SideBar>
                     SizedBox(
                       height: 50,
                     ), //EMPIEZA A PARTIR DE AQUI
-                    MenuItem(icon: Icons.person, title: "Perfil de usuario"),
-                    MenuItem(icon: Icons.person, title: "Graficos"),
-                    MenuItem(icon: Icons.person, title: "Chats"),
                     MenuItem(
-                        icon: Icons.person, title: "Añadir codigo de amigo"),
-                    MenuItem(icon: Icons.person, title: "Chatear con NutrIA"),
-                    MenuItem(icon: Icons.person, title: "Politicas de uso"),
-                    MenuItem(icon: Icons.person, title: "Cambiar cuenta"),
-                    MenuItem(icon: Icons.person, title: "Salir"),
+                      icon: Icons.person,
+                      title: "Perfil de usuario",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.ProfileClickedEvent);
+                      },
+                    ),
+                    //MenuItem(icon: Icons.person, title: "Graficos"),
+                    //MenuItem(icon: Icons.person, title: "Chats"),
+                    MenuItem(
+                      icon: Icons.person,
+                      title: "Añadir codigo de amigo",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.CodeFriendClickedEvent);
+                      },
+                    ),
+                    //MenuItem(icon: Icons.person, title: "Chatear con NutrIA"),
+                    //MenuItem(icon: Icons.person, title: "Politicas de uso"),
+                    //MenuItem(icon: Icons.person, title: "Cambiar cuenta"),
+                    //MenuItem(icon: Icons.person, title: "Salir"),
                   ],
                 ),
               )),
