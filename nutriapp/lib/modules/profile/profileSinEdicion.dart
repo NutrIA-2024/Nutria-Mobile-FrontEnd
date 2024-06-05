@@ -20,59 +20,172 @@ class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20),
-              const Column(
-                children: [
-                  Text(
-                    "Tu cambio esta cerca...",
-                    style: TextStyle(
-                        color: verdeMain,
-                        fontSize: 35,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ],
-              ),
-              Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment
-                      .center, // Centra los hijos verticalmente
-                  children: <Widget>[
-                    SizedBox(
-                      width: 120,
-                      height: 120,
-                      child: Image.asset('assets/nutria.png'),
-                    ),
-                    // Puedes agregar más widgets aquí si lo necesitas
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-              _buildBlackText(
-                  "Ingrese sus alergias, intolerancias, afecciones y problemas de salud . . ."),
-              const SizedBox(height: 15),
-              _buildBlackText(
-                  "Ingrese preferencias mas especificas, como frutas favoritas, verduras favoritas, proteinas favoritas como pollo, carne y demas . . ."),
-              const SizedBox(height: 25),
-              _buildBlackText("CONSEJO:"),
-              _buildGreyText(
-                  "Si omitiste algo, no te preocupes, que podras ingresar esa informacion luego . . ."),
-              const SizedBox(height: 20),
-              Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment
-                      .center, // Centra los hijos verticalmente
-                  children: <Widget>[
-                    SizedBox(
-                      width: 120,
-                      height: 120,
-                      child: Image.asset('assets/nutria.png'),
-                    ),
-                    // Puedes agregar más widgets aquí si lo necesitas
-                  ],
-                ),
-              ),
               const SizedBox(height: 30),
-              _buildLoginButton(),
+              Center(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment
+                        .center, // Centra los hijos verticalmente
+                    children: <Widget>[
+                      ClipOval(
+                        child: Image.asset(
+                          'assets/avatar.jpg',
+                          width: 140.0,
+                          height: 140.0,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ]),
+              ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  children: [
+                    Expanded(flex: 2, child: _buildBlackSubTitle("Nombre:")),
+                    Expanded(flex: 2, child: _buildBlackText("Dan Mitchel")),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  children: [
+                    Expanded(flex: 2, child: _buildBlackSubTitle("Edad:")),
+                    Expanded(flex: 2, child: _buildBlackText("29 años")),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  children: [
+                    Expanded(flex: 2, child: _buildBlackSubTitle("Estatura:")),
+                    Expanded(flex: 2, child: _buildBlackText("152 cm")),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  children: [
+                    Expanded(flex: 2, child: _buildBlackSubTitle("Peso:")),
+                    Expanded(flex: 2, child: _buildBlackText("70 KG")),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                        flex: 2, child: _buildBlackSubTitle("Intensidad:")),
+                    Expanded(flex: 2, child: _buildBlackText("Alta")),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  children: [
+                    Expanded(flex: 2, child: _buildBlackSubTitle("Nombre")),
+                    Expanded(flex: 2, child: _buildBlackText("Dan Mitchel")),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              _buildBlackSubTitle("Objetivo:"),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: InkWell(
+                  onTap: () {
+                    // Acción cuando se presiona el Card
+                  },
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      side: BorderSide(color: Colors.green, width: 2.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    _buildBlackSubTitle("Ganar Musculo"),
+                                    SizedBox(height: 8),
+                                    _buildBlackText(
+                                        "Pon tus musculos fuertes y gana fuerza"),
+                                  ],
+                                ),
+                              ),
+                              ClipOval(
+                                child: Image.asset(
+                                  'assets/ganar_musculo.png',
+                                  width: 70.0,
+                                  height: 70.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
+              _buildBlackSubTitle("Afecciones:"),
+              _buildBlackText("Alérgico a los mariscos"),
+              const SizedBox(height: 15),
+              _buildBlackSubTitle("Comidas favoritas:"),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: InkWell(
+                  onTap: () {
+                    // Acción cuando se presiona el Card
+                  },
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      side: BorderSide(color: Colors.green, width: 2.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    _buildBlackText("Proteínas"),
+                                    _buildBlackText("Bebidas"),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
+              _buildBlackSubTitle("Comidas preferenciales especificas:"),
+              _buildBlackText("Fresas, mango, carne de res"),
+              const SizedBox(height: 30),
+              _buildNextButton(),
               const SizedBox(height: 20),
             ],
           ),
@@ -88,40 +201,26 @@ class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
     );
   }
 
-  Widget _buildAutosizeText(TextEditingController controller, String text) {
-    return TextField(
-      controller: controller,
-      cursorColor: Colors.green, // Cambia el color del cursor a verde
-      style:
-          TextStyle(color: Colors.green), // Cambia el color del texto a verde
-      minLines: 3,
-      maxLines: null,
-      decoration: InputDecoration(
-        border: const OutlineInputBorder(
-          // Aplica el borde verde cuando el TextField está activo (seleccionado)
-          borderSide: BorderSide(color: Colors.green),
-        ),
-        enabledBorder: const OutlineInputBorder(
-          // Aplica el borde verde cuando el TextField está habilitado pero no seleccionado
-          borderSide: BorderSide(color: Colors.green),
-        ),
-        focusedBorder: const OutlineInputBorder(
-          // Aplica el borde verde cuando el TextField está enfocado
-          borderSide: BorderSide(color: Colors.green),
-        ),
-        hintText: text,
-        hintStyle: const TextStyle(
-            color: Colors.grey), // Cambia el color del hintText a gris
-        // Cambia el color del label (si lo estás usando) cuando está flotando
-        floatingLabelStyle: const TextStyle(color: Colors.green),
-      ),
-    );
-  }
-
   Widget _buildGreenText(String text) {
     return Text(
       text,
       style: const TextStyle(color: Colors.green, fontSize: 16),
+    );
+  }
+
+  Widget _buildBlackTitle(String text) {
+    return Text(
+      text,
+      style: const TextStyle(
+          color: Colors.black, fontSize: 28, fontWeight: FontWeight.w400),
+    );
+  }
+
+  Widget _buildBlackSubTitle(String text) {
+    return Text(
+      text,
+      style: const TextStyle(
+          color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
     );
   }
 
@@ -173,7 +272,7 @@ class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
     );
   }
 
-  Widget _buildLoginButton() {
+  Widget _buildNextButton() {
     return ElevatedButton(
       onPressed: () {
         // Aquí debes agregar la lógica para el inicio de sesión
@@ -188,9 +287,11 @@ class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
             const Size.fromHeight(60), // Texto y otros elementos del botón
       ),
       child: const Text(
-        "VAMOS",
+        "EDITAR CONFIGURACIÓN",
         style: TextStyle(
-            color: Colors.white), // El color del texto dentro del botón
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.w500), // El color del texto dentro del botón
       ),
     );
   }
