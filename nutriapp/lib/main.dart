@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutriapp/modules/camera/activate_camera.dart';
+import 'package:nutriapp/modules/food_favorite/favorite.dart';
 import 'package:nutriapp/modules/graphipcs/graphics.dart';
 import 'package:nutriapp/modules/home/home.dart';
 import 'package:nutriapp/modules/login_and_register/init.dart';
@@ -28,7 +29,7 @@ class NutriaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Nutria",
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const /*SideBarlayout()*/ ActivateCameraPage(),
+      home: const /*SideBarlayout()*/ FavoritePage(),
     );
   }
 }
