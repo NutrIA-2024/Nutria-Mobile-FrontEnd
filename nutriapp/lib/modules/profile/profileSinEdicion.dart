@@ -101,44 +101,8 @@ class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
                   onTap: () {
                     // Acción cuando se presiona el Card
                   },
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.green, width: 2.0),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    _buildBlackSubTitle("Ganar Musculo"),
-                                    SizedBox(height: 8),
-                                    _buildBlackText(
-                                        "Pon tus musculos fuertes y gana fuerza"),
-                                  ],
-                                ),
-                              ),
-                              ClipOval(
-                                child: Image.asset(
-                                  'assets/ganar_musculo.png',
-                                  width: 70.0,
-                                  height: 70.0,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  child: _buildCardButtom("Esta es una prueba XD hjsdg",
+                      'assets/ganar_musculo.png'),
                 ),
               ),
               const SizedBox(height: 15),
@@ -296,6 +260,44 @@ class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
             color: Colors.white,
             fontSize: 18,
             fontWeight: FontWeight.w500), // El color del texto dentro del botón
+      ),
+    );
+  }
+
+  Widget _buildCardButtom(String subtitle, String image) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+        side: BorderSide(color: Colors.green, width: 2.0),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _buildBlackText(subtitle),
+                    ],
+                  ),
+                ),
+                ClipOval(
+                  child: Image.asset(
+                    image,
+                    width: 70.0,
+                    height: 70.0,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
