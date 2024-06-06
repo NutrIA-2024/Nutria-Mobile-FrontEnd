@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutriapp/modules/graphipcs/graphics.dart';
 import 'package:nutriapp/modules/home/home.dart';
 import 'package:nutriapp/modules/login_and_register/init.dart';
 import 'package:nutriapp/modules/login_and_register/codeSecurityPage.dart';
@@ -26,7 +27,7 @@ class NutriaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Nutria",
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const /*SideBarlayout()*/ ProfileWithoutPage(),
+      home: const /*SideBarlayout()*/ GraphicsPage(),
     );
   }
 }
