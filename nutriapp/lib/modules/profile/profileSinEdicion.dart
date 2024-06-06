@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nutriapp/themes/color.dart';
 import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/profile/profileConEdicion.dart';
 
 class ProfileWithoutPage extends StatefulWidget with NavigationStates {
   const ProfileWithoutPage({Key? key}) : super(key: key);
@@ -275,7 +276,10 @@ class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
   Widget _buildNextButton() {
     return ElevatedButton(
       onPressed: () {
-        // Aquí debes agregar la lógica para el inicio de sesión
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ProfileWithPage()),
+        );
       },
       style: ElevatedButton.styleFrom(
         foregroundColor: verdeMain, backgroundColor: Colors.green,
