@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:nutriapp/themes/color.dart';
 import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/chats/chats_saved_historial.dart';
 
 class ChatSavedPage extends StatefulWidget with NavigationStates {
   const ChatSavedPage({Key? key}) : super(key: key);
@@ -75,7 +76,11 @@ class _ChatSavedPageState extends State<ChatSavedPage> {
                 width: MediaQuery.of(context).size.width,
                 child: InkWell(
                   onTap: () {
-                    // Acción cuando se presiona el Card
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ChatSavedHistorialPage()),
+                    );
                   },
                   child: _buildCardButtom(
                       "String subtitle", 'assets/ChatGPT_Logo.png'),

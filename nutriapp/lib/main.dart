@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nutriapp/modules/camera/activate_camera.dart';
 import 'package:nutriapp/modules/chats/chats_saved.dart';
+import 'package:nutriapp/modules/chats/chats_saved_historial.dart';
 import 'package:nutriapp/modules/food_favorite/favorite.dart';
 import 'package:nutriapp/modules/graphipcs/graphics.dart';
 import 'package:nutriapp/modules/home/home.dart';
