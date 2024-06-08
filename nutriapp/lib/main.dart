@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutriapp/modules/camera/activate_camera.dart';
+import 'package:nutriapp/modules/chat_ia/chat_ia.dart';
 import 'package:nutriapp/modules/chats/chats_saved.dart';
 import 'package:nutriapp/modules/chats/chats_saved_historial.dart';
 import 'package:nutriapp/modules/food_favorite/favorite.dart';
@@ -17,6 +18,7 @@ import 'package:nutriapp/modules/profile/profileConEdicion.dart';
 import 'package:nutriapp/modules/sidebar/sidebarLayout.dart';
 
 import 'package:nutriapp/modules/information_init/info2Page.dart';
+import 'package:nutriapp/modules/trash/trash2.dart';
 
 void main() {
   runApp(const NutriaApp());
@@ -31,7 +33,7 @@ class NutriaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Nutria",
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const /*SideBarlayout()*/ ChatSavedPage(),
+      home: /*SideBarlayout()*/ ChatIAPage(),
     );
   }
 }

@@ -5,29 +5,81 @@ import 'package:flutter/widgets.dart';
 import 'package:nutriapp/themes/color.dart';
 import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
 
-class ChatSavedHistorialPage extends StatefulWidget with NavigationStates {
-  const ChatSavedHistorialPage({Key? key}) : super(key: key);
+class ChatIAPage extends StatefulWidget with NavigationStates {
+  const ChatIAPage({Key? key}) : super(key: key);
 
   @override
-  State<ChatSavedHistorialPage> createState() => _ChatSavedHistorialPageState();
+  State<ChatIAPage> createState() => _ChatIAPageState();
 }
 
-class _ChatSavedHistorialPageState extends State<ChatSavedHistorialPage> {
+class _ChatIAPageState extends State<ChatIAPage> {
+  TextEditingController messageController = TextEditingController();
+  String texto_muestra = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(30),
+      body: SafeArea(
+        child: Container(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //Contenido
-              SizedBox(height: 20),
-              _buildChat('assets/avatar.jpg',
-                  "Cuantas proteínas, carbohidratos y grasa (en gramos) tiene la tortilla de plátano?"),
-              _buildChat('assets/ChatGPT_Logo.png',
-                  "La cantidad de proteínas, carbohidratos y grasas en una tortilla de plátano puede variar según cómo se prepare y los ingredientes adicionales que se utilicen. Una tortilla de plátano básica, hecha con plátanos maduros, generalmente contiene principalmente carbohidratos y una pequeña cantidad de proteínas y grasas. A continuación, te proporcionaré una estimación aproximada de los valores nutricionales en una tortilla de plátano básica (por cada 100 gramos)"),
+              Expanded(
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          //empieza el chat
+                          if (texto_muestra != '')
+                            _buildChat('assets/avatar.jpg', texto_muestra)
+                          else
+                            SizedBox(height: 10),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(
+                        10), // Define el radio de los bordes redondeados
+                    border: Border.all(
+                      color: verdeMain, // Define el color del borde
+                      width: 2.0, // Define el ancho del borde
+                    ),
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: TextField(
+                          controller: messageController,
+                          maxLines: null,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "Enter message",
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            texto_muestra = messageController.text;
+                          });
+                        },
+                        icon: Icon(
+                          Icons.send,
+                          color: verdeMain,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -44,8 +96,8 @@ class _ChatSavedHistorialPageState extends State<ChatSavedHistorialPage> {
           ClipOval(
             child: Image.asset(
               image,
-              width: 50,
-              height: 50,
+              width: 60,
+              height: 60,
               fit: BoxFit.cover,
             ),
           ),
@@ -102,7 +154,7 @@ class _ChatSavedHistorialPageState extends State<ChatSavedHistorialPage> {
   Widget _buildBlackText(String text) {
     return Text(
       text,
-      style: const TextStyle(color: Colors.black, fontSize: 17),
+      style: const TextStyle(color: Colors.black, fontSize: 18),
       textAlign: TextAlign.justify,
     );
   }
