@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter/material.dart';
-import 'package:nutriapp/modules/sidebar/menuItem.dart';
-import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/user/sidebar/menuItem.dart';
+import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});

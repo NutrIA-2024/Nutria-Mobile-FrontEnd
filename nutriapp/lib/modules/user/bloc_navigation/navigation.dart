@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:nutriapp/modules/profile/profileSinEdicion.dart';
+import 'package:nutriapp/modules/user/profile/profileSinEdicion.dart';
 import 'package:nutriapp/modules/login_and_register/codeSecurityPage.dart';
 
 enum NavigationEvents {

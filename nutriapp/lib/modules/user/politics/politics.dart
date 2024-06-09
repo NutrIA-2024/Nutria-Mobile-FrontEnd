@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nutriapp/themes/color.dart';
-import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
 
 class PoliticsPage extends StatefulWidget with NavigationStates {
   const PoliticsPage({Key? key}) : super(key: key);

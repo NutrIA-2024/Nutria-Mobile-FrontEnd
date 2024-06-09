@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nutriapp/themes/color.dart';
-import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
 
 class ProfileWithPage extends StatefulWidget with NavigationStates {
   const ProfileWithPage({Key? key}) : super(key: key);
@@ -667,6 +667,7 @@ class _ProfileWithPageState extends State<ProfileWithPage> {
                     ],
                   ),
                 ),
+                SizedBox(width: 10),
                 ClipOval(
                   child: Image.asset(
                     image,

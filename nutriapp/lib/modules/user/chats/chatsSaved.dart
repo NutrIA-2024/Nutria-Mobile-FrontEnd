@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nutriapp/themes/color.dart';
-import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
-import 'package:nutriapp/modules/chats/chatsSavedHistorial.dart';
+import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/user/chats/chatsSavedHistorial.dart';
 
 class ChatSavedPage extends StatefulWidget with NavigationStates {
   const ChatSavedPage({Key? key}) : super(key: key);

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nutriapp/themes/color.dart';
-import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
 
-class CodeFriendPage extends StatefulWidget with NavigationStates {
-  const CodeFriendPage({Key? key}) : super(key: key);
+class GraphicsPage extends StatefulWidget with NavigationStates {
+  const GraphicsPage({Key? key}) : super(key: key);
 
   @override
-  State<CodeFriendPage> createState() => _CodeFriendPageState();
+  State<GraphicsPage> createState() => _GraphicsPageState();
 }
 
-class _CodeFriendPageState extends State<CodeFriendPage> {
-  String code = "UD93K)=/";
+class _GraphicsPageState extends State<GraphicsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,31 +67,7 @@ class _CodeFriendPageState extends State<CodeFriendPage> {
                 ),
               ),
               const SizedBox(height: 20),
-              _buildGreenText("Comparte tu código"),
-              const SizedBox(height: 20),
-              _buildBlackTitleCenter("Tu código de amigo es:"),
-              const SizedBox(height: 5),
-              _buildCardOnly(code),
-              const SizedBox(height: 10),
-              Center(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Clipboard.setData(ClipboardData(text: code));
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                              content: Text('Código copiado al portapapeles')),
-                        );
-                      },
-                      child: _buildGreenTextCenter("Copiar código"),
-                    ),
-                    SizedBox(width: 10),
-                    Icon(Icons.copy, color: verdeMain),
-                  ],
-                ),
-              ),
+              _buildGreenText("Gráficos")
             ],
           ),
         ),
@@ -115,28 +90,11 @@ class _CodeFriendPageState extends State<CodeFriendPage> {
     );
   }
 
-  Widget _buildGreenTextCenter(String text) {
-    return Text(
-      text,
-      style: const TextStyle(
-          color: verdeMain, fontSize: 25, fontWeight: FontWeight.w600),
-    );
-  }
-
   Widget _buildBlackText(String text) {
     return Text(
       text,
       style: const TextStyle(color: Colors.black, fontSize: 19),
       textAlign: TextAlign.justify,
-    );
-  }
-
-  Widget _buildBlackTextCode(String text) {
-    return Center(
-      child: SelectableText(
-        text,
-        style: const TextStyle(color: Colors.black, fontSize: 30),
-      ),
     );
   }
 
@@ -148,51 +106,11 @@ class _CodeFriendPageState extends State<CodeFriendPage> {
     );
   }
 
-  Widget _buildBlackTitleCenter(String text) {
-    return Center(
-      child: Text(
-        text,
-        style: const TextStyle(
-            color: Colors.black, fontSize: 28, fontWeight: FontWeight.w400),
-      ),
-    );
-  }
-
   Widget _buildBlackSubTitle(String text) {
     return Text(
       text,
       style: const TextStyle(
           color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
-    );
-  }
-
-  Widget _buildCardOnly(String subtitle) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
-        side: BorderSide(color: Colors.green, width: 2.0),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(15),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildBlackTextCode(subtitle),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
