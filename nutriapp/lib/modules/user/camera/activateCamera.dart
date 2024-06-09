@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
 import 'dart:io';
 import 'informationFood.dart';
 import 'package:nutriapp/themes/color.dart';
 
-class ActivateCameraPage extends StatefulWidget {
+class ActivateCameraPage extends StatefulWidget with NavigationStates {
   const ActivateCameraPage({Key? key}) : super(key: key);
 
   @override

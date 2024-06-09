@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nutriapp/themes/color.dart';
 import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
-import 'package:nutriapp/modules/user/profile/profileConEdicion.dart';
+import 'package:nutriapp/modules/user/profile/profileWithEdit.dart';
 
 class ProfileWithoutPage extends StatefulWidget with NavigationStates {
   const ProfileWithoutPage({Key? key}) : super(key: key);

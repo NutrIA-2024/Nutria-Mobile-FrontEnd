@@ -15,8 +15,8 @@ import 'package:nutriapp/modules/login_and_register/recoverPage.dart';
 import 'package:nutriapp/modules/login_and_register/registerPage.dart';
 import 'package:nutriapp/modules/information_init/infoPage.dart';
 import 'package:nutriapp/modules/user/politics/politics.dart';
-import 'package:nutriapp/modules/user/profile/profileSinEdicion.dart';
-import 'package:nutriapp/modules/user/profile/profileConEdicion.dart';
+import 'package:nutriapp/modules/user/profile/profileWithoutEdit.dart';
+import 'package:nutriapp/modules/user/profile/profileWithEdit.dart';
 import 'package:nutriapp/modules/user/sidebar/sidebarLayout.dart';
 
 import 'package:nutriapp/modules/information_init/info2Page.dart';
@@ -34,7 +34,7 @@ class NutriaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Nutria",
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const /*SideBarlayout()*/ ChangeAccountPage(),
+      home: const SideBarlayout() /*ChangeAccountPage()*/,
     );
   }
 }
