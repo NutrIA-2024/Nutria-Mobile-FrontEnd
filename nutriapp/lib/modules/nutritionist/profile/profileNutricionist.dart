@@ -4,14 +4,15 @@ import 'package:nutriapp/themes/color.dart';
 import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
 import 'package:nutriapp/modules/user/profile/profileWithEdit.dart';
 
-class ProfileWithoutPage extends StatefulWidget with NavigationStates {
-  const ProfileWithoutPage({Key? key}) : super(key: key);
+class ProfileNutricionistPage extends StatefulWidget with NavigationStates {
+  const ProfileNutricionistPage({Key? key}) : super(key: key);
 
   @override
-  State<ProfileWithoutPage> createState() => _ProfileWithoutPageState();
+  State<ProfileNutricionistPage> createState() =>
+      _ProfileNutricionistPageState();
 }
 
-class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
+class _ProfileNutricionistPageState extends State<ProfileNutricionistPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
                     children: <Widget>[
                       ClipOval(
                         child: Image.asset(
-                          'assets/avatar.jpg',
+                          'assets/nutricionista.png',
                           width: 140.0,
                           height: 140.0,
                           fit: BoxFit.cover,
@@ -74,83 +75,6 @@ class _ProfileWithoutPageState extends State<ProfileWithoutPage> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                        flex: 2, child: _buildBlackSubTitle("Intensidad:")),
-                    Expanded(flex: 2, child: _buildBlackText("Alta")),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Row(
-                  children: [
-                    Expanded(flex: 2, child: _buildBlackSubTitle("Nombre")),
-                    Expanded(flex: 2, child: _buildBlackText("Dan Mitchel")),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 10),
-              _buildBlackSubTitle("Objetivo:"),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: InkWell(
-                  onTap: () {
-                    // Acción cuando se presiona el Card
-                  },
-                  child: _buildCardButtom(
-                      "Ganar Musculo",
-                      "Pon tus musculos fuertes y gana fuerza",
-                      'assets/ganar_musculo.png'),
-                ),
-              ),
-              const SizedBox(height: 15),
-              _buildBlackSubTitle("Afecciones:"),
-              _buildBlackText("Alérgico a los mariscos"),
-              const SizedBox(height: 15),
-              _buildBlackSubTitle("Comidas favoritas:"),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: InkWell(
-                  onTap: () {
-                    // Acción cuando se presiona el Card
-                  },
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      side: BorderSide(color: Colors.green, width: 2.0),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    _buildBlackText("Proteínas"),
-                                    _buildBlackText("Bebidas"),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 15),
-              _buildBlackSubTitle("Comidas preferenciales especificas:"),
-              _buildBlackText("Fresas, mango, carne de res"),
               const SizedBox(height: 30),
               _buildNextButton(),
               const SizedBox(height: 20),
