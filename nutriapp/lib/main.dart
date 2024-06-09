@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutriapp/modules/nutritionist/account/changeAccountsNutricionist.dart';
 import 'package:nutriapp/modules/nutritionist/code_patient/codePatient.dart';
 import 'package:nutriapp/modules/user/sidebar/sidebarLayout.dart';
 
@@ -15,7 +16,7 @@ class NutriaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Nutria",
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const /*SideBarlayout()*/ CodePatientPage(),
+      home: const /*SideBarlayout()*/ ChangeAccountNutricionistPage(),
     );
   }
 }
