@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nutriapp/themes/color.dart';
+import 'package:nutriapp/modules/nutritionist/bloc_navigation_nutricionist/navigation.dart';
 
-class ChangeAccountNutricionistPage extends StatefulWidget {
+class ChangeAccountNutricionistPage extends StatefulWidget
+    with NavigationNutricionistStates {
   const ChangeAccountNutricionistPage({Key? key}) : super(key: key);
 
   @override

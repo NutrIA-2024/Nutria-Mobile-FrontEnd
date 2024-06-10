@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nutriapp/modules/nutritionist/profile/profileNutricionistEdit.dart';
 import 'package:nutriapp/themes/color.dart';
-import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
-import 'package:nutriapp/modules/user/profile/profileWithEdit.dart';
+import 'package:nutriapp/modules/nutritionist/bloc_navigation_nutricionist/navigation.dart';
 
-class ProfileNutricionistPage extends StatefulWidget with NavigationStates {
+class ProfileNutricionistPage extends StatefulWidget
+    with NavigationNutricionistStates {
   const ProfileNutricionistPage({Key? key}) : super(key: key);
 
   @override
@@ -168,7 +169,8 @@ class _ProfileNutricionistPageState extends State<ProfileNutricionistPage> {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ProfileWithPage()),
+          MaterialPageRoute(
+              builder: (context) => ProfileNutricionistEditPage()),
         );
       },
       style: ElevatedButton.styleFrom(

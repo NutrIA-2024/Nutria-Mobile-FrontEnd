@@ -4,6 +4,7 @@ import 'package:nutriapp/modules/nutritionist/code_patient/codePatient.dart';
 import 'package:nutriapp/modules/nutritionist/home/homeNutricionist.dart';
 import 'package:nutriapp/modules/nutritionist/profile/profileNutricionist.dart';
 import 'package:nutriapp/modules/nutritionist/profile/profileNutricionistEdit.dart';
+import 'package:nutriapp/modules/nutritionist/sidebar_nutricionist/sidebarNutricionistLayout.dart';
 import 'package:nutriapp/modules/user/sidebar/sidebarLayout.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class NutriaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Nutria",
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const /*SideBarlayout()*/ HomeNutricionistPage(),
+      home: const SideBarlayout(),
     );
   }
 }

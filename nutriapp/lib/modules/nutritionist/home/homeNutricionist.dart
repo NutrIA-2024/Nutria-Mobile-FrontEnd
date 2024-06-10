@@ -2,13 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nutriapp/modules/nutritionist/bloc_navigation_nutricionist/navigation.dart';
 import 'package:nutriapp/modules/nutritionist/informaton_patient/chatsSavedPatient.dart';
 import 'package:nutriapp/modules/nutritionist/informaton_patient/favoriteFoodPatient.dart';
 import 'package:nutriapp/modules/nutritionist/informaton_patient/graphicsPatient.dart';
 import 'package:nutriapp/modules/nutritionist/informaton_patient/profilePatient.dart';
 import 'package:nutriapp/themes/color.dart';
 
-class HomeNutricionistPage extends StatefulWidget {
+class HomeNutricionistPage extends StatefulWidget
+    with NavigationNutricionistStates {
   const HomeNutricionistPage({Key? key}) : super(key: key);
 
   @override

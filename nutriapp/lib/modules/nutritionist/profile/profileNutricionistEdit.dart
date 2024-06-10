@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nutriapp/modules/nutritionist/bloc_navigation_nutricionist/navigation.dart';
 import 'package:nutriapp/themes/color.dart';
-import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
 
-class ProfileNutricionistEditPage extends StatefulWidget with NavigationStates {
+class ProfileNutricionistEditPage extends StatefulWidget
+    with NavigationNutricionistStates {
   const ProfileNutricionistEditPage({Key? key}) : super(key: key);
 
   @override
