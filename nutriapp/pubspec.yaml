@@ -38,10 +38,19 @@ dependencies:
   google_fonts: ^6.1.0
   rxdart: ^0.27.7
   flutter_bloc: ^8.1.5
+  image_picker: ^1.1.2
+  fl_chart: ^0.68.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons:
+
+flutter_icons:
+  android: 'launcher_icon'
+  ios: true
+  image_path: 'assets/icon/nutria_logo.png'
+  adaptive_icon_background: 'assets/icon/nutria_logo.png'
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

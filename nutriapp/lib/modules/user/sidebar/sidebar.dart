@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter/material.dart';
-import 'package:nutriapp/modules/sidebar/menuItem.dart';
-import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/user/sidebar/menuItem.dart';
+import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});
@@ -78,29 +78,104 @@ class _SideBarState extends State<SideBar>
                       height: 50,
                     ), //EMPIEZA A PARTIR DE AQUI
                     MenuItem(
+                      icon: Icons.home,
+                      title: "Sección Principal",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.HomeClickedEvent);
+                      },
+                    ),
+                    MenuItem(
                       icon: Icons.person,
-                      title: "Perfil de usuario",
+                      title: "Perfil de Usuario",
                       onTap: () {
                         onIconPressed();
                         BlocProvider.of<NavigationBloc>(context)
                             .add(NavigationEvents.ProfileClickedEvent);
                       },
                     ),
-                    //MenuItem(icon: Icons.person, title: "Graficos"),
-                    //MenuItem(icon: Icons.person, title: "Chats"),
                     MenuItem(
-                      icon: Icons.person,
-                      title: "Añadir codigo de amigo",
+                      icon: Icons.bar_chart,
+                      title: "Gráficos",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.GraphicsClickedEvent);
+                      },
+                    ),
+                    MenuItem(
+                      icon: Icons.favorite,
+                      title: "Comidas Favoritas",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.FavoriteFoodClickedEvent);
+                      },
+                    ),
+                    MenuItem(
+                      icon: Icons.bookmark,
+                      title: "Chats Guardados",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.SavedChatsClickedEvent);
+                      },
+                    ),
+                    MenuItem(
+                      icon: Icons.chat,
+                      title: "Chatear con NutrIA",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.ChatNutrIAClickedEvent);
+                      },
+                    ),
+                    MenuItem(
+                      icon: Icons.person_add,
+                      title: "Añadir Código Amigo",
                       onTap: () {
                         onIconPressed();
                         BlocProvider.of<NavigationBloc>(context)
                             .add(NavigationEvents.CodeFriendClickedEvent);
                       },
                     ),
-                    //MenuItem(icon: Icons.person, title: "Chatear con NutrIA"),
-                    //MenuItem(icon: Icons.person, title: "Politicas de uso"),
-                    //MenuItem(icon: Icons.person, title: "Cambiar cuenta"),
-                    //MenuItem(icon: Icons.person, title: "Salir"),
+                    MenuItem(
+                      icon: Icons.camera_alt,
+                      title: "Camara NutrIA",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.CameraNutrIAClickedEvent);
+                      },
+                    ),
+                    MenuItem(
+                      icon: Icons.policy,
+                      title: "Política de Uso",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.UserPolitcsClickedEvent);
+                      },
+                    ),
+                    MenuItem(
+                      icon: Icons.swap_horiz,
+                      title: "Cambiar Cuenta",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.ChangeAccountClickedEvent);
+                      },
+                    ),
+                    MenuItem(
+                      icon: Icons.logout,
+                      title: "Salir",
+                      onTap: () {
+                        onIconPressed();
+                        BlocProvider.of<NavigationBloc>(context)
+                            .add(NavigationEvents.LogoutClickedEvent);
+                      },
+                    ),
                   ],
                 ),
               )),

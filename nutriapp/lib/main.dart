@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nutriapp/modules/login_and_register/init.dart';
-import 'package:nutriapp/modules/login_and_register/codeSecurityPage.dart';
-import 'package:nutriapp/modules/login_and_register/loginPage.dart';
-import 'package:nutriapp/modules/login_and_register/recoverPage.dart';
-import 'package:nutriapp/modules/login_and_register/registerPage.dart';
-import 'package:nutriapp/modules/information_init/infoPage.dart';
-import 'package:nutriapp/modules/profile/profileSinEdicion.dart';
-import 'package:nutriapp/modules/profile/profileConEdicion.dart';
-import 'package:nutriapp/modules/sidebar/sidebarLayout.dart';
-
-import 'package:nutriapp/modules/information_init/info2Page.dart';
+import 'package:nutriapp/modules/nutritionist/sidebar_nutricionist/sidebarNutricionistLayout.dart';
+import 'package:nutriapp/modules/user/sidebar/sidebarLayout.dart';
 
 void main() {
   runApp(const NutriaApp());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutriapp/themes/color.dart';
-import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/user/bloc_navigation/navigation.dart';
 
 class CodePage extends StatefulWidget with NavigationStates {
   const CodePage({super.key});

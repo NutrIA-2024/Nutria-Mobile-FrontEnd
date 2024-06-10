@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nutriapp/modules/sidebar/sidebar.dart';
 
-import 'package:nutriapp/modules/bloc_navigation/navigation.dart';
+import 'package:nutriapp/modules/nutritionist/bloc_navigation_nutricionist/navigation.dart';
+import 'package:nutriapp/modules/nutritionist/sidebar_nutricionist/sidebarNutricionist.dart';
 
-class SideBarlayout extends StatelessWidget {
-  const SideBarlayout({super.key});
+class SideBarNutricionistlayout extends StatelessWidget {
+  const SideBarNutricionistlayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +14,12 @@ class SideBarlayout extends StatelessWidget {
         create: (context) => NavigationBloc(),
         child: Stack(
           children: <Widget>[
-            BlocBuilder<NavigationBloc, NavigationStates>(
+            BlocBuilder<NavigationBloc, NavigationNutricionistStates>(
               builder: (context, navigationState) {
                 return navigationState as Widget;
               },
             ),
-            SideBar(),
+            SideBarNutricionist(),
           ],
         ),
       ),
