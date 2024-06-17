@@ -22,7 +22,7 @@ class NutriaApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Nutria",
       theme: ThemeData(primarySwatch: Colors.green),
-      home: const InitApp(),
+      //home: const InitApp(),
       //home: const LoginPage(),
       //home: const RegisterPage(),
       //home: const RecoverPage(),
@@ -30,7 +30,7 @@ class NutriaApp extends StatelessWidget {
       //home: const InfoPage(),
       //home: const Info2Page(),
       //home: const SideBarlayout(),
-      //home: const SideBarNutricionistlayout(),
+      home: const SideBarNutricionistlayout(),
     );
   }
 }
