@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nutriapp/modules/login_and_register/loginPage.dart';
 import 'package:nutriapp/themes/color.dart';
 
 class InitApp extends StatefulWidget {
@@ -19,9 +20,9 @@ class _InitAppState extends State<InitApp> {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                verdeClaro,
+                verdeMain,
                 verdeOscuro,
-                verdeClaro,
+                verdeMain,
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -73,35 +74,40 @@ class _InitAppState extends State<InitApp> {
                 ),
                 Image.asset('assets/nutria_init.png'),
                 Column(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey.shade200,
-                        side: const BorderSide(color: Colors.black),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 100, vertical: 20),
-                        minimumSize: const Size(double.infinity, 50),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        elevation: 5,
-                      ),
-                      child: Text(
-                        'Inicio',
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontFamily: GoogleFonts.aBeeZee().fontFamily,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ],
+                  children: [_buildButton()],
                 ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildButton() {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
+      },
+      style: ElevatedButton.styleFrom(
+        foregroundColor: verdeMain, backgroundColor: Colors.green,
+        side: const BorderSide(color: Colors.white),
+        shape: const StadiumBorder(),
+        elevation: 5,
+        shadowColor:
+            verdeMain, // Reemplaza con tu variable de color 'verdeMain'
+        minimumSize:
+            const Size.fromHeight(60), // Texto y otros elementos del botón
+      ),
+      child: const Text(
+        "VAMOS",
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+        ), // El color del texto dentro del botón
       ),
     );
   }
